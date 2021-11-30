@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="card shadow col-12 col-sm-8 col-md-6 col-lg-4 m-auto">
+    <div class="card-header"><h3 class="text-primary">Add Participant</h3></div>
+    <div class="card-body">
+        <form action="." method='POST'>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="">Participant Name</label>
+                <input class='form-control' type="text" name='name' placeholder="Participant Name">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Workout 1</span>
+                <input type="number" class="form-control" name='workout1_minutes' placeholder="minutes">
+                <input type="number" class="form-control" name='workout1_seconds' placeholder="seconds">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Workout 2</span>
+                <input type="number" class="form-control" name='workout2_minutes' placeholder="minutes">
+                <input type="number" class="form-control" name='workout2_seconds' placeholder="seconds">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Workout 3</span>
+                <input type="number" class="form-control" name='workout3_minutes' placeholder="minutes">
+                <input type="number" class="form-control" name='workout3_seconds' placeholder="seconds">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Workout 4</span>
+                <input type="number" class="form-control" name='workout4_minutes' placeholder="minutes">
+                <input type="number" class="form-control" name='workout4_seconds' placeholder="seconds">
+            </div>
+            <button class='btn btn-lg btn-success' type='submit'>Add Participant</button>
+            <a class='btn btn-link' href="/">Cancel</a>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

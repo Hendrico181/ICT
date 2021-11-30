@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<table class='table table-striped'>
+    <thead class='thead-dark'>
+        <tr>
+            <th>Standing</th>
+            <th>Participant</th>
+            <th>Workout 1</th>
+            <th>Workout 2</th>
+            <th>Workout 3</th>
+            <th>Workout 4</th>
+            <th>Overall Points</th>
+        </tr>
+    </thead>
+    {% for participant in participant_list %}
+    <tr>
+        <td>
+            {{ forloop.counter }}
+        </td>
+        <td>
+            <strong>{{ participant.name }}</strong>
+        </td>
+        <td>
+            {{ participant.workout1_time }} <br><small class='test-secondary'>({{ participant.workout1_score }})</small>
+        </td>
+        <td>
+            {{ participant.workout2_time }} <br><small class='test-secondary'>({{ participant.workout2_score }})</small>
+        </td>
+        <td>
+            {{ participant.workout3_time }} <br><small class='test-secondary'>({{ participant.workout3_score }})</small>
+        </td>
+        <td>
+            {{ participant.workout4_time }} <br><small class='test-secondary'>({{ participant.workout4_score }})</small>
+        </td>
+        <td>
+            <span class="badge rounded-circle bg-primary">{{ participant.points }}</span>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
